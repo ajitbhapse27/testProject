@@ -28,24 +28,26 @@ public class HomePage extends TestBase {
 	 * method to select departure city
 	 * @param city
 	 */
-	public void selectDepartureCity(String city) {
+	public HomePage selectDepartureCity(String city) {
 		try {
 			selectOption(optDepartureCity,city);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return PageFactory.initElements(driver, HomePage.class);
 	}
 	
 	/**
 	 * method to select destination city
 	 * @param city
 	 */
-	public void selectDestinationCity(String city) {
+	public HomePage selectDestinationCity(String city) {
 		try {
 			selectOption(optDestinationCity,city);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return PageFactory.initElements(driver, HomePage.class);
 	}
 	
 	/**

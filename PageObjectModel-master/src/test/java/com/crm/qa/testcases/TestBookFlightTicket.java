@@ -39,37 +39,33 @@ public class TestBookFlightTicket  {
 	public void verifyTicketBooking()  {
 		
 	Map<String,String> testData = TestUtil.getTestData("testData.json", "verifyTicketBooking");
-	
 	HomePage homePage = testBase.getHomePage();
-	log.info("select departure city...");
-	homePage.selectDepartureCity(testData.get("departureCity"));
 	
-	log.info("select destination city...");
-	homePage.selectDestinationCity(testData.get("destinationCity"));
+	log.info("select departure and destination city...");
+	ReservePage reservePage = homePage.selectDepartureCity(testData.get("departureCity"))
+									  .selectDestinationCity(testData.get("destinationCity"))
+									  .clickOnFindFights();
 	
-	log.info("click on find flights..");
-	ReservePage reservePage = homePage.clickOnFindFights();
-
 	log.info("click on choose this flight..");
 	PurchasePage purchasePage = reservePage.clickChooseThisFlight();
 	
 	log.info("fill in the purchase flight form..");
-	purchasePage.enterName(testData.get("name"));
-	purchasePage.enterAddress(testData.get("address"));
-	purchasePage.enterCity(testData.get("city"));
-	purchasePage.enterState(testData.get("state"));
-	purchasePage.enterZipCode(testData.get("zipCode"));
-	purchasePage.selectCardType(testData.get("cardType"));
-	purchasePage.enterCreditCardNumber(testData.get("creditCardNumber"));
-	purchasePage.enterMonth(testData.get("month"));
-	purchasePage.enterYear(testData.get("year"));
-	purchasePage.enterNameOnCard(testData.get("nameOnTheCard"));
-	
-	ConfirmationPage confirmationPage = purchasePage.clickPurchaseFlight();
+	ConfirmationPage confirmationPage = purchasePage.enterName(testData.get("name"))
+													.enterAddress(testData.get("address"))
+													.enterCity(testData.get("city"))
+													.enterState(testData.get("state"))
+													.enterZipCode(testData.get("zipCode"))
+													.selectCardType(testData.get("cardType"))
+													.enterCreditCardNumber(testData.get("creditCardNumber"))
+													.enterMonth(testData.get("month"))
+													.enterYear(testData.get("year"))
+													.enterNameOnCard(testData.get("nameOnTheCard"))
+													.clickPurchaseFlight();
 	
 	Assert.assertEquals(confirmationPage.getStatus(), "PendingCapture");
 		
 	}
+
 	
 	@AfterMethod
 	public void quite() {

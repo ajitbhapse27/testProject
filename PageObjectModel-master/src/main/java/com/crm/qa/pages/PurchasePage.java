@@ -50,69 +50,88 @@ public class PurchasePage extends TestBase {
 	/**
 	 * enter first last name
 	 */
-	public void enterName(String text) {
+	public PurchasePage enterName(String text) {
 		enterText(firstName, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter address
+	 * @return 
 	 */
-	public void enterAddress(String text) {
+	public PurchasePage enterAddress(String text) {
 		enterText(address, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter city
+	 * @return 
 	 */
-	public void enterCity(String text) {
+	public PurchasePage enterCity(String text) {
 		enterText(city, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter state
+	 * @return 
 	 */
-	public void enterState(String text) {
+	public PurchasePage enterState(String text) {
 		enterText(state, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter zipcode
+	 * @return 
 	 */
-	public void enterZipCode(String text) {
+	public PurchasePage enterZipCode(String text) {
 		enterText(zipCode, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter card type
+	 * @return 
 	 */
-	public void selectCardType(String option) {
+	public PurchasePage selectCardType(String option) {
 		enterText(cardType, option);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter card number
+	 * @return 
 	 */
-	public void enterCreditCardNumber(String text) {
+	public PurchasePage enterCreditCardNumber(String text) {
 		enterText(creditCardNumber, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	/**
 	 * enter month
+	 * @return 
 	 */
-	public void enterMonth(String text) {
+	public PurchasePage enterMonth(String text) {
 		enterText(creditCardMonth, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	/**
 	 * enter year
+	 * @return 
 	 */
-	public void enterYear(String text) {
+	public PurchasePage enterYear(String text) {
 		enterText(creditCardYear, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	
 	/**
 	 * enter year
+	 * @return 
 	 */
-	public void enterNameOnCard(String text) {
+	public PurchasePage enterNameOnCard(String text) {
 		enterText(nameOnCard, text);
+		return PageFactory.initElements(driver, PurchasePage.class);
 	}
 	/**
 	 * click purchase flight
