@@ -1,0 +1,16 @@
+{
+	"verifyTicketBooking": {
+		"departureCity"   :"Boston",
+		"destinationCity" :"Rome",
+		"name" 			  :"Ajit",
+		"address"		  :"A-503",
+		"city"			  :"Pune",
+		"state"			  :"Maharastra",
+		"zipCode"		  :"411090",
+		"cardType"		  :"Visa",
+		"creditCardNumber" : "1234123412341234",
+		"month"			  :"3",
+		"year"			  :"2020",
+		"nameOnTheCard"	  :"John Smith"			
+		}
+}
